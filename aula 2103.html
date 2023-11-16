@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita Federal</title>
+    <script>
+        function maca(){
+            let valor1=parseFloat(window.prompt("Digite quantidade de maçãs desejadas: "))
+           
+            if(valor1 >=12 ){
+                alert("O valor total das maçãs em Reais será: "+valor1*1.00)
+            }
+            else{
+                alert("O valor total das maçãs em Reais será: "+valor1*1.30)
+            }
+        }
+        function media(){
+            let nota1=parseInt(window.prompt("Digite sua 1° nota:"))
+            let nota2=parseInt(window.prompt("Digite sua 2° nota:"))
+            let nota3=parseInt(window.prompt("Digite sua 3° nota:"))
+            let nota4=parseInt(window.prompt("Digite sua 4° nota:"))
+            let media=(nota1+nota2+nota3+nota4)/4
+            if(media >=7 ){
+                alert("Aprovado com média de: "+media)
+            }else{
+                alert("Reprovado com média de: "+media)
+            }
+        }
+        function validaridade(){
+            let idade = idades.value
+            if(idade >= 18){
+
+                document.getElementById("resultadoidade").innerHTML=("Maior de idade"+total)
+            }else{
+              
+                document.getElementById("resultadoidade").innerHTML=("Menor de idade")
+            }
+        }
+    </script>
+</head>
+
+    <style>
+        .estiloResultado{
+            color: red;
+        }
+        fieldset{
+            background-color: aliceblue;
+        }
+        body{
+            background-image: url(receita-federal-instavel.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            font-family: sans-serif;
+            color: #0155b4;
+        }
+        
+        img  {
+        float: right;
+        }
+        h1 {
+  text-decoration: underline overline;
+  text-decoration-style: wavy;
+}
+    </style>
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Logo_Receita_Federal_do_Brasil.svg/800px-Logo_Receita_Federal_do_Brasil.svg.png" width="300" height="60">
+    <h1>Receita Federal [Oficial]</h1>
+    
+    <hr>
+    <fieldset>
+        <legend>Gov.br [Oficial]</legend>
+    <form id="imposto_de_renda" name="Imposto de Renda">
+        <label for="nome">Insira seu nome</label>
+        <input type="text" id="nome" name="nome" required autofocus autocomplete="off">
+        <hr>
+        <label for="email">Insira seu email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="senha">Insira sua senha</label>
+        <input type="password" id="senha" name="senha" required pattern="[a-z]{1}[0-9]{2}">
+        <br>
+        <hr>
+        <label for="idade">Insira sua idade</label>
+        <input type="number" id="idades" name="idades" required>
+        <span id="resultadoidade" name="resultadoidade" class="estiloResultado"></span>
+        <br>
+        <input type="button" id="idade" name="idade" value="Validar Idade" onclick="validaridade()"> 
+        <br>
+        <label id="dinheiro">Tem dinheiro na conta?</label>
+        <input type="checkbox" id="dinheiro" name="dinheiro">
+        <br>
+       
+        <input type="submit" value="salvar">
+    </form>
+    </fieldset>
+    <input type="button" id="aprovacao" name="aprovacao" value="Validar Média" onclick="media()">   
+    <input type="button" id="maca" name="maca" value="Validar Maçã" onclick="maca()">  
+</body>
+</html>
